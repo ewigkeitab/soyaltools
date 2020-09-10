@@ -34,9 +34,9 @@ func makeXORSUM(b *[]byte) {
 }
 
 // SoyalOpenDoor21h make cmd
-func SoyalOpenDoor21h(nid int) []byte {
+func SoyalOpenDoor21h(nid int, d0 byte, wg byte) []byte {
 
-	pro := []byte{0x7e, 0x06, byte(nid), 0x21, 0x84, 0x0, 0, 0}
+	pro := []byte{0x7e, 0x06, byte(nid), 0x21, d0, wg, 0, 0}
 	makeXORSUM(&pro)
 	// pro[6] = XORgen(pro[2:6])
 	// pro[7] = SUMgen(pro[2:7])
