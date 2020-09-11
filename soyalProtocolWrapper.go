@@ -86,3 +86,21 @@ func SoyalReqUserAlias2Eh(nid int, nodeAddr int) []byte {
 	makeXORSUM(&pro)
 	return pro
 }
+
+// SoyalReqEventlog25h request oldest log
+func SoyalReqEventlog25h(nid int, nodeAddr int) []byte {
+
+	pro := []byte{0x7e, 0x04, byte(nid), 0x25, 0, 0}
+	pro[1] = (byte)(len(pro) - 2)
+	makeXORSUM(&pro)
+	return pro
+}
+
+// SoyalRemoveEventlog37h remove oldest log
+func SoyalRemoveEventlog37h(nid int, nodeAddr int) []byte {
+
+	pro := []byte{0x7e, 0x04, byte(nid), 0x37, 0, 0}
+	pro[1] = (byte)(len(pro) - 2)
+	makeXORSUM(&pro)
+	return pro
+}
