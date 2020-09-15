@@ -30,6 +30,8 @@ func Parser2Eto03(d []byte) string {
 	}
 	return ""
 }
+
+// Parser37to27 parse Evenlog
 func Parser37to27(d []byte) NodeEvenlog {
 	c := NodeEvenlog{}
 	c.Nid = int(d[4])
@@ -40,11 +42,11 @@ func Parser37to27(d []byte) NodeEvenlog {
 	c.Date = d[9]
 	c.Month = d[10]
 	c.Year = d[11]
-	c.UserAddr = int(d[14])
+
 	t3 := uint16(d[19])*256 + uint16(d[20])
 	t4 := uint16(d[23])*256 + uint16(d[24])
-	// c.Tag = hex.EncodeToString(d[5 : 5+48])
-	c.Tag = fmt.Sprintf("%d:%d", t3, t4) //, binary.LittleEndian.Uint16(ud[6:7]))
+
+	c.Tag = fmt.Sprintf("%d:%d", t3, t4)
 
 	return c
 }
