@@ -34,6 +34,11 @@ func Parser2Eto03(d []byte) string {
 // Parser37to27 parse Evenlog
 func Parser37to27(d []byte) NodeEvenlog {
 	c := NodeEvenlog{}
+	if len(d) < 24 {
+
+		//temp, fix later
+		return c
+	}
 	c.Nid = int(d[4])
 	c.Sec = d[5]
 	c.Min = d[6]
