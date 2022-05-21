@@ -1,3 +1,3 @@
 # soyaltools
-Soyal control protocol
-https://www.soyal.com.tw
+Soyal devices' control protocol
+(https://www.soyal.com.tw)
